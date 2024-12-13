@@ -1,0 +1,43 @@
+# [shell]
+# program = "/bin/zsh"
+
+[window]
+dimensions = { columns = 112, lines = 30 }
+# opacity = 0.97
+dynamic_title = false
+title = "Terminal"
+# decorations = "None"
+
+[font]
+size = 11
+
+[font.normal]
+# family = "UbuntuMono Nerd Font"
+family = "JetBrainsMono Nerd Font"
+# family = "Hack Nerd Font" 
+# style = "Medium"
+
+[colors.primary]
+# background = "#1C1C1C"
+background = "#000000"
+foreground = "#f5ede6"
+
+[colors.normal]
+black = "#3D352A"
+red = "#CD5C5C"
+green = "#86AF80"
+yellow = "#E8AE5B"
+blue = "#6495ED"
+magenta = "#DEB887"
+cyan = "#B0C4DE"
+white = "#BBAA99"
+
+[colors.bright]
+black = "#939393"
+red = "#CC5533"
+green = "#88AA22"
+yellow = "#FFA75D"
+blue = "#87CEEB"
+magenta = "#996600"
+cyan = "#B0C4DE"
+white = "#DDCCBB"

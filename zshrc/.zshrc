@@ -101,10 +101,22 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# aliases
+#
+# Aliases
+#
 alias cls=clear
 alias vim=nvim
 alias l="exa -la --icons"
+
+# settings
 alias vzsh="vim ~/.zshrc"
 alias szsh="source ~/.zshrc"
 alias alaconf="vim ~/.config/alacritty/alacritty.toml"
+alias tmuxconf="vim ~/.tmux.conf"
+alias vimconf="vim ~/.config/nvim"
+
+# git
+alias gaa="git add ."
+alias gcom="git commit -m"
+alias gpush="git push"
+alias gstatus="git status"

@@ -6,7 +6,7 @@ return {
         "nvim-tree/nvim-web-devicons",
     },
     config = function()
-        vim.keymap.set('n', '<C-n>', ':NvimTreeToggle <CR>', { desc = 'Toggle File Tree' })
+        vim.keymap.set('n', '<C-n>', ':NvimTreeToggle <CR>', { desc = 'Toggle File Tree', noremap = true, silent = true })
         require("nvim-tree").setup({
             view = {
                 width = 35,

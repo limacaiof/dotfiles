@@ -3,6 +3,7 @@ return {
 	event = "VeryLazy",
 	keys = {
 		{ "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", desc = "Toggle pin" },
+		{ "<leader>q", "<Cmd>bdelete<CR>", desc = "Close buffer" },
 		{ "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "Delete non-pinned buffers" },
 		{ "<leader>bo", "<Cmd>BufferLineCloseOthers<CR>", desc = "Delete other buffers" },
 		{ "<leader>br", "<Cmd>BufferLineCloseRight<CR>", desc = "Delete buffers to the right" },
@@ -14,10 +15,10 @@ return {
 	},
 	opts = {
 		options = {
-      -- stylua: ignore
-      close_command = "bdelete",
-      -- stylua: ignore
-      right_mouse_command = "bdelete",
+            -- stylua: ignore
+            close_command = "bdelete",
+            -- stylua: ignore
+            right_mouse_command = "bdelete",
 			diagnostics = "nvim_lsp",
 			always_show_bufferline = false,
 			-- diagnostics_indicator = function(_, _, diag)

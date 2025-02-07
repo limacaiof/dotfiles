@@ -1,7 +1,7 @@
 return {
     {
         "folke/tokyonight.nvim",
-        enabled = false,
+        -- enabled = false,
         lazy = false,
         priority = 1000,
         opts = {},
@@ -23,7 +23,7 @@ return {
     },
     {
         "projekt0n/github-nvim-theme",
-        -- enabled = false,
+        enabled = false,
         lazy = false,
         priority = 1000,
         opts = {},

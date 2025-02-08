@@ -26,9 +26,9 @@ return {
 			    capabilities = capabilities
             })
 
-            vim.keymap.set('n', '<leader>ch', vim.lsp.buf.hover, {})
-            vim.keymap.set('n', '<leader>cd', vim.lsp.buf.definition, {})
-            vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
+            vim.keymap.set('n', 'ch', vim.lsp.buf.hover, {})
+            vim.keymap.set('n', 'cd', vim.lsp.buf.definition, {})
+            vim.keymap.set({ 'n', 'v' }, 'ca', vim.lsp.buf.code_action, {})
         end
     }
 }

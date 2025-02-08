@@ -7,18 +7,12 @@ return {
 		local null_ls = require("null-ls")
 		null_ls.setup({
 			sources = {
-				null_ls.builtins.formatting.stylua.with({
-                    filetypes = {"lua"}
-                }),
-				null_ls.builtins.formatting.black.with({
-                    filetypes = {"py", "ipynb"}
-                }),
-				require("none-ls.diagnostics.ruff").with({
-                    filetypes = {"py", "ipynb"}
-                }),
+				null_ls.builtins.formatting.stylua,
+				null_ls.builtins.formatting.black,
+				require("none-ls.diagnostics.ruff"),
 			},
 		})
 
-		vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, {})
+		vim.keymap.set("n", "cf", vim.lsp.buf.format, {})
 	end,
 }

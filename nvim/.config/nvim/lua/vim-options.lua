@@ -4,6 +4,7 @@ vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
 vim.cmd("set number")
 vim.cmd("set nohlsearch")
+vim.cmd("set clipboard=unnamedplus")
 
 -- NVIM-TREE
 vim.g.loaded_netrw = 1

@@ -5,6 +5,9 @@ general.import  = [
 # [shell]
 # program = "/bin/zsh"
 
+[env]
+term = "xterm-256color"
+
 [window]
 dimensions = { columns = 112, lines = 30 }
 dynamic_title = false

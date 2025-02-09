@@ -14,6 +14,6 @@ return {
 		})
 
 		vim.keymap.set("n", "cf", vim.lsp.buf.format, {})
-        vim.keymap.set('n', 'cd', ':lua vim.diagnostic.open_float(nil, {focus=true, scope="line"})<CR>', { desc = 'Toggle Diagnostics', noremap = true, silent = true })
+        vim.keymap.set('n', '<leader>cd', ':lua vim.diagnostic.open_float(nil, {focus=true, scope="line"})<CR>', { desc = 'Toggle Diagnostics', noremap = true, silent = true })
 	end,
 }

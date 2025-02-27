@@ -1,3 +1,9 @@
+-- lsp to be imported by default, with no extra configuration
+local servers = {
+	"lua_ls",
+	"jedi_language_server",
+}
+
 return {
 	{
 		"williamboman/mason.nvim",
@@ -9,19 +15,13 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "pyright" },
+				ensure_installed = servers,
 			})
 		end,
 	},
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			-- lsp to be imported by default, with no extra configuration
-			local servers = {
-				"lua_ls",
-				"jedi_language_server",
-			}
-
 			-- default keymaps for all lsp
 			local on_attach = function(_, bufnr)
 				local keymap = vim.keymap
@@ -41,6 +41,8 @@ return {
 					capabilities = capabilities,
 				})
 			end
+
+			-- extra configuration for lsp
 		end,
 	},
 }

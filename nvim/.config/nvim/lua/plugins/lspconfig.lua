@@ -1,6 +1,8 @@
 -- lsp to be imported by default, with no extra configuration
 local servers = {
 	"lua_ls",
+    "docker_compose_language_service",
+    "dockerls",
 	"jedi_language_server",
 }
 

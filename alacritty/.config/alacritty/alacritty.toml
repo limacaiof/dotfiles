@@ -1,9 +1,7 @@
 general.import  = [
-    "~/.config/alacritty/arthur.toml"
+    # "~/.config/alacritty/arthur.toml"
+    "~/.config/alacritty/tokyo_night.toml"
 ]
-
-# [shell]
-# program = "/bin/zsh"
 
 [env]
 term = "xterm-256color"

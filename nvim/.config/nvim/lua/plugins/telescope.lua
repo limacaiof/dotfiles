@@ -1,6 +1,7 @@
 local ignore_filetypes_list = {
     "venv",
     "__pycache__",
+    "node%_modules/.*",
     "%.xlsx",
     "%.jpg",
     "%.png",

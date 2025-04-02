@@ -21,18 +21,4 @@ return {
             vim.cmd([[colorscheme tokyonight-night]])
         end,
     },
-    {
-        "projekt0n/github-nvim-theme",
-        enabled = false,
-        lazy = false,
-        priority = 1000,
-        opts = {},
-        config = function()
-            require("github-theme").setup({
-                -- ...
-            })
-
-            vim.cmd("colorscheme github_dark_default")
-        end,
-    },
 }

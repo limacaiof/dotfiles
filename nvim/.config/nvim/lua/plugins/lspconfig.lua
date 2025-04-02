@@ -6,6 +6,8 @@ local servers = {
     "jedi_language_server",
     "eslint",
     "ts_ls",
+    "cssls",
+    "html",
 }
 
 return {
@@ -30,7 +32,7 @@ return {
             local on_attach = function(_, bufnr)
                 local keymap = vim.keymap
                 local opts = { noremap = true, silent = true, buffer = bufnr }
-                keymap.set("n", "ca", vim.lsp.buf.hover, opts)
+                keymap.set("n", "ca", function () vim.lsp.buf.hover { border = "single" } end, opts)
                 keymap.set("n", "cd", vim.lsp.buf.definition, opts)
                 keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
                 keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)

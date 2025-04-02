@@ -118,9 +118,4 @@ alias szsh="source ~/.zshrc"
 alias alaconf="vim ~/.config/alacritty/alacritty.toml"
 alias tmuxconf="vim ~/.tmux.conf"
 alias vimconf="vim ~/.config/nvim"
-
-# git
-alias gaa="git add ."
-alias gcom="git commit -m"
-alias gpush="git push"
-alias gstatus="git status"
+alias gconf="vim ~/.config/ghostty/config"

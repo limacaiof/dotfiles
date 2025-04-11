@@ -1,22 +1,28 @@
 return {
-	"nvimtools/none-ls.nvim",
+    "nvimtools/none-ls.nvim",
     dependencies = {
-      "nvimtools/none-ls-extras.nvim",
+        "nvimtools/none-ls-extras.nvim",
     },
-	config = function()
-		local null_ls = require("null-ls")
-		null_ls.setup({
-			sources = {
-				null_ls.builtins.formatting.stylua,
-				null_ls.builtins.formatting.black,
-				null_ls.builtins.formatting.prettier,
-				null_ls.builtins.diagnostics.biome,
-				-- require("none-ls.diagnostics.eslint_d"),
-				require("none-ls.diagnostics.ruff"),
-			},
-		})
+    config = function()
+        local null_ls = require("null-ls")
+        null_ls.setup({
+            sources = {
+                null_ls.builtins.formatting.stylua.with({ filetypes = { "lua" } }),
+                null_ls.builtins.formatting.black.with({ filetypes = { "python" } }),
+                null_ls.builtins.formatting.prettier.with({
+                    filetypes = { "html", "javascript", "typescript", "json", "yaml", "markdown" },
+                }),
+                -- require("none-ls.diagnostics.eslint_d"),
+                require("none-ls.diagnostics.ruff").with({ filetypes = { "python" } }),
+            },
+        })
 
-		vim.keymap.set("n", "cf", vim.lsp.buf.format, {})
-        vim.keymap.set('n', '<leader>cd', ':lua vim.diagnostic.open_float(nil, {focus=true, scope="line"})<CR>', { desc = 'Toggle Diagnostics', noremap = true, silent = true })
-        end,
+        vim.keymap.set("n", "cf", vim.lsp.buf.format, {})
+        vim.keymap.set(
+            "n",
+            "<leader>cd",
+            ':lua vim.diagnostic.open_float(nil, {focus=true, scope="line"})<CR>',
+            { desc = "Toggle Diagnostics", noremap = true, silent = true }
+        )
+    end,
 }

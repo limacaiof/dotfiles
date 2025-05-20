@@ -7,7 +7,7 @@ general.import  = [
 term = "xterm-256color"
 
 [window]
-dimensions = { columns = 105, lines = 28 }
+dimensions = { columns = 103, lines = 26 }
 dynamic_title = false
 title = "Terminal"
 padding = {x = 5, y = 5}
@@ -18,7 +18,6 @@ size = 11.5
 
 [font.normal]
 family = "JetBrainsMono Nerd Font"
-# family = "GeistMono Nerd Font" 
+# family = "Caskaydiacove Nerd Font" 
+# family = "BlexMono Nerd Font" 
 # family = "MesloLGM Nerd Font"
-
-

@@ -1,6 +1,6 @@
 general.import  = [
-    # "~/.config/alacritty/arthur.toml"
-    "~/.config/alacritty/tokyo_night.toml"
+    "~/.config/alacritty/arthur.toml"
+    # "~/.config/alacritty/tokyo_night.toml"
 ]
 
 [env]
@@ -19,5 +19,5 @@ size = 11.5
 [font.normal]
 family = "JetBrainsMono Nerd Font"
 # family = "Caskaydiacove Nerd Font" 
-# family = "BlexMono Nerd Font" 
+# family = "GeistMono Nerd Font" 
 # family = "MesloLGM Nerd Font"

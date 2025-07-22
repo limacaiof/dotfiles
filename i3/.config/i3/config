@@ -220,7 +220,7 @@ font pango:JetBrainsMono Nerd Font 10
 default_border pixel
 
 gaps inner 10px
-gaps outer 0
+gaps outer15550
 smart_gaps inverse_outer
 
 client.focused           #9aa5ce #364A82 #c0caf5 #9aa5ce   #9aa5ce
@@ -233,8 +233,8 @@ bindsym ctrl+$mod+Right workspace next
 # bindsym $mod+$alt+Left move container to workspace prev
 # bindsym $mod+$alt+Right move container to workspace next
 bindsym Print exec /usr/bin/flameshot gui
-bindsym $mod+comma exec amixer set Master -q 5%-
-bindsym $mod+period exec amixer set Master -q 5%+
+bindsym $ctrl+mod+comma exec amixer set Master -q 5%-
+bindsym $ctrl+mod+period exec amixer set Master -q 5%+
 bindsym $mod+space exec ~/.config/polybar/scripts/change_keyboard_layout.sh 
 
 for_window [class="Spotify"] move to workspace $ws8

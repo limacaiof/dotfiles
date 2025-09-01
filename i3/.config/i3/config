@@ -208,8 +208,8 @@ bindsym $mod+r mode "resize"
 set $alt Mod1
 
 # Screen settings
-exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080_60.01
 exec --no-startup-id xrandr --output HDMI-1 --mode 2560x1080_74.99 --primary
+exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080_60.01
 
 workspace 1 output HDMI-1
 workspace 9 output eDP-1
@@ -220,7 +220,6 @@ font pango:JetBrainsMono Nerd Font 10
 default_border pixel
 
 gaps inner 10px
-gaps outer15550
 smart_gaps inverse_outer
 
 client.focused           #9aa5ce #364A82 #c0caf5 #9aa5ce   #9aa5ce

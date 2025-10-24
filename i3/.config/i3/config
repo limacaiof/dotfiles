@@ -14,8 +14,23 @@ set $mod Mod4
 # Picom
 exec --no-startup-id picom 
 
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id nm-applet
 # Bar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+	position bottom
+    status_command i3status
+
+        # I3BLOCKS GAPS 
+        status_command SCRIPT_DIR=~/.config/i3blocks/scripts i3blocks
+        # status_command  i3status
+
+}
+
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -63,18 +78,18 @@ bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id dmenu_run
-bindsym $mod+d exec --no-startup-id dmenu_run 
+bindsym $mod+d exec --no-startup-id dmenu_run -b 
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
-# change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+# change focus vim mode
+bindsym $mod+h focus left
+bindsym $mod+k focus up 
+bindsym $mod+j focus down 
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -83,10 +98,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -95,10 +110,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+Shift+x split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+Shift+y split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -172,16 +187,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -191,17 +206,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-# bar {
-# 	position top
-#     # status_command i3status
-#
-#         # I3BLOCKS GAPS 
-#         # status_command SCRIPT_DIR=~/.config/i3blocks/scripts i3blocks
-#
-# }
-#
 ##########################
 ## MY PERSONAL KEYBINDS ##
 ##########################
@@ -219,7 +223,7 @@ exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/iug7ftytnmae1.p
 font pango:JetBrainsMono Nerd Font 10
 default_border pixel
 
-gaps inner 10px
+gaps inner 5px
 smart_gaps inverse_outer
 
 client.focused           #9aa5ce #364A82 #c0caf5 #9aa5ce   #9aa5ce
@@ -229,6 +233,8 @@ client.unfocused         #16161d #16161d #c0caf5 #16161d   #16161d
 
 bindsym ctrl+$mod+Left workspace prev
 bindsym ctrl+$mod+Right workspace next
+bindsym ctrl+$mod+h workspace prev
+bindsym ctrl+$mod+l workspace next
 # bindsym $mod+$alt+Left move container to workspace prev
 # bindsym $mod+$alt+Right move container to workspace next
 bindsym Print exec /usr/bin/flameshot gui

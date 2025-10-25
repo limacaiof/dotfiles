@@ -62,6 +62,11 @@ interval=once
 signal=10
 #STEP=5%
 
+[key_layout]
+command=$SCRIPT_DIR/key_layout
+interval=1
+separator=true
+
 
 [wifi]
 #INTERFACE=wlp3s0

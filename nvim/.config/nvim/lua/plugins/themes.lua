@@ -32,4 +32,36 @@ return {
             vim.cmd([[colorscheme gruvbox-material]])
         end,
     },
+    {
+        "savq/melange-nvim",
+        enabled = false,
+        lazy = false,
+        priority = 1000,
+        opts = {},
+        config = function()
+            vim.cmd([[colorscheme melange]])
+
+            -- ty meisaka
+            local mel = require("melange/palettes/dark")
+            for name, attrs in pairs({
+                Normal = { fg = mel.a.fg, bg = "#1e1b1a" },
+                Whitespace = { fg = "#4e433e", italic = false, nocombine = true },
+                --LspInlayHint = { fg = "#4e433e", italic = false, nocombine = true },
+                LspInlayHint = { fg = "#70787e", italic = true, nocombine = false },
+                ["@lsp.type.namespace"] = { fg = "#78b98A" },
+                ["@lsp.type.class"] = { fg = "#73b9be" },
+            }) do
+                vim.api.nvim_set_hl(0, name, attrs)
+            end
+        end,
+    },
+    {
+        "ellisonleao/gruvbox.nvim",
+        enabled = false,
+        priority = 1000,
+        config = function()
+            vim.cmd([[colorscheme gruvbox]])
+        end,
+        opts = {},
+    },
 }

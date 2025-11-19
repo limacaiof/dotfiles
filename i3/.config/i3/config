@@ -52,6 +52,11 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+# Natural Scrolling on touchpad
+exec --no-startup-id xinput set-prop 13 318 1
+# Slow down mouse sensitivity
+exec --no-startup-id xinput set-prop 30 330 -0.5
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -235,8 +240,14 @@ bindsym ctrl+$mod+l workspace next
 # bindsym $mod+$alt+Left move container to workspace prev
 # bindsym $mod+$alt+Right move container to workspace next
 bindsym Print exec /usr/bin/flameshot gui
-bindsym $ctrl+mod+comma exec amixer set Master -q 5%-
-bindsym $ctrl+mod+period exec amixer set Master -q 5%+
+# ALSAMIXER
+# bindsym $ctrl+mod+comma exec amixer set Master -q 5%-
+# bindsym $ctrl+mod+period exec amixer set Master -q 5%+
+
+# PULSEAUDIO
+bindsym ctrl+$mod+comma exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym ctrl+$mod+period exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+
 bindsym $mod+space exec ~/.config/i3/scripts/change_keyboard_layout.sh 
 
 for_window [class="Spotify"] move to workspace $ws8

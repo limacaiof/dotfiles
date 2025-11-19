@@ -60,6 +60,7 @@ label=VOL:
 command=$SCRIPT_DIR/volume
 interval=once
 signal=10
+interval=1
 #STEP=5%
 
 [key_layout]
